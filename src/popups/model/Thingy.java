@@ -1,6 +1,6 @@
 package popups.model;
 
-public class PopupsModel 
+public class Thingy 
 {
 	private int number;
 	private double value;
