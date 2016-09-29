@@ -1,31 +1,40 @@
 package popups.controller;
 
 import popups.view.PopupViewer;
+import popups.model.Thingy;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class PopupsController 
 {
 	
 	private PopupViewer display;
+	private List<Thingy> thingyList;
 	
 	public PopupsController()
 	{
 		display = new PopupViewer();
+		thingyList = new ArrayList<Thingy>();
 	}
 	
 	public void start()
 	{
-		//display.displayMessage("Jacob the Destroyer of Salt attacks you.");
-		//String firstMove = display.collectResponse("Do you run or fight?");
-		//if(firstMove .equalsIgnoreCase)
-		String answer = "sample";
-		while(answer != null && !answer.equals(""))
-		{
-		display.displayMessage("Hi there ;-)");
-		
-		answer = display.collectResponse("What is going on?");
-		display.displayMessage(answer + " is what you said.");
-		}
+		learnLists();
 	}
+	
+	private void testLoop()
+	{
+		//display.displayMessage("Jacob the Destroyer of Salt attacks you.");
+				//String firstMove = display.collectResponse("Do you run or fight?");
+				//if(firstMove .equalsIgnoreCase)
+				String answer = "sample";
+				while(answer != null && !isDouble(answer))
+				{
+				answer = display.collectResponse("You need to type in a number!!!!");
+				}
+	}
+	
 	/**
 	 * Checks if the supplied string can be parsed to a double value.
 	 * @param potentialValue The String to test.
@@ -60,6 +69,7 @@ public class PopupsController
 		try
 		{
 			int test = Integer.parseInt(potentialNumber);
+			isParseable = true;
 		}
 		catch(NumberFormatException notInt)
 		{
@@ -70,5 +80,27 @@ public class PopupsController
 		
 		return isParseable;
 	}
-	
+
+	private void learnLists()
+	{
+		if(thingyList.size() > 0)
+		{
+			display.displayMessage(thingyList.size() + " is the size of the list.");
+		}
+		else if(thingyList.size() == 0)
+		{
+			display.displayMessage("Why do you have a list with nothing in it?");
+		}
+		Thingy testThingy = new Thingy();
+		thingyList.add(testThingy);
+		if(thingyList.size() > 0)
+		{
+			display.displayMessage(thingyList.size() + " is the size of the list.");
+		}
+		else if(thingyList.size() == 0)
+		{
+			display.displayMessage("Why do you have a list with nothing in it?");
+		}
+		
+	}
 }
