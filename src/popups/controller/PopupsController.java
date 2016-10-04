@@ -158,7 +158,7 @@ public class PopupsController
 		display.displayMessage(thingyList.size() + " is the size of the list.");
 		
 		Thingy saltLevel = thingyList.get(0);
-		Thingy 
+		boolean alive = true;
 			
 	}
 }
