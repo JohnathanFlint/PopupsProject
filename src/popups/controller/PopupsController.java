@@ -21,6 +21,7 @@ public class PopupsController
 	public void start()
 	{
 		learnLists();
+		fightJacob();
 	}
 	
 	private void testLoop()
@@ -93,14 +94,61 @@ public class PopupsController
 		}
 		Thingy testThingy = new Thingy();
 		thingyList.add(testThingy);
-		if(thingyList.size() > 0)
-		{
+		//if(thingyList.size() > 0)
+		//{
 			display.displayMessage(thingyList.size() + " is the size of the list.");
-		}
-		else if(thingyList.size() == 0)
+		//}
+		//else if(thingyList.size() == 0)
+		//{
+			//display.displayMessage("Why do you have a list with nothing in it?");
+		//}
+		for (int index = 0; index < 5; index++)
 		{
-			display.displayMessage("Why do you have a list with nothing in it?");
+			Thingy addThingy = new Thingy();
+			thingyList.add(addThingy);
+			display.displayMessage(addThingy.getWords());
 		}
+		display.displayMessage(thingyList.size() + " is the size");
+		
+		thingyList.get(3).setWords("Look I changed a value");
+		Thingy temp = thingyList.get(4);
+		temp.setWords("Stuff");
+		
+		for ( int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage(thingyList.get(index).getWords());	
+		}
+		
+		thingyList.add(3, new Thingy());
+		
+		display.displayMessage("The size is " + thingyList.size());
+		
+		thingyList.remove(0); //longer have access to this object because there is no = sign.
+		
+		display.displayMessage("The size is " + thingyList.size());
+		
+		Thingy deletedThingy = thingyList.remove(3);
+		display.displayMessage(deletedThingy.getWords() + " and the list size is " + thingyList.size());
+		
+		thingyList.set(0, deletedThingy);
+		
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage(thingyList.get(index).getWords());
+		}
+		
+		for (Thingy currentThingy : thingyList)//A for each loop does this for everything in the list
+		{
+			display.displayMessage(currentThingy.getWords());
+		}
+		
+		Thingy power = thingyList.get(2);
+		power.setWords("OVER 9000!");
+		display.displayMessage(thingyList.get(2).getWords());
+	}
+	
+	private void fightJacob()
+	{
 		
 	}
 }
