@@ -20,8 +20,8 @@ public class PopupsController
 	
 	public void start()
 	{
-		learnLists();
 		fightJacob();
+		learnLists();
 	}
 	
 	private void testLoop()
@@ -149,6 +149,15 @@ public class PopupsController
 	
 	private void fightJacob()
 	{
+		for (int index = 0; index < 10; index++)
+		{
+			Thingy addThingy = new Thingy();
+			thingyList.add(addThingy);
+		}
 		
+		display.displayMessage(thingyList.size() + " is the size of the list.");
+		
+		saltLevel = thingyList.get(0)
+			
 	}
 }
