@@ -46,8 +46,5 @@ public class PopupViewer
 		
 		return response;
 	}
-	//public void displayMessage(int size) {
-		// TODO Auto-generated method stub
-		
-	//}
+
 }
